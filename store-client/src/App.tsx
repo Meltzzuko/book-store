@@ -5,7 +5,7 @@ import Repo from './repositories'
 function App() {
   const [categoryList, setCategoryList] = useState<Category[]>([])
       
-  const [] fetchCategoryList = async () => {
+  const fetchCategoryList = async () => {
     const result = await Repo.categorise.getAll()
     if (result){
       setCategoryList(result)
