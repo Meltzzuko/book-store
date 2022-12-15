@@ -14,6 +14,7 @@ router
         const category = await findById(id).first()
         if(!category){
             ctx.response.status = 404
+            return
         }
         ctx.body = category
     })
