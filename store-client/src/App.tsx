@@ -1,5 +1,6 @@
 import { useEffect, useState, useRef } from "react";
 import BookDetail from "./components/BookDetail";
+import BookForm from "./components/BookFrom";
 import Book from "./models/Book";
 import Category from "./models/Category";
 import Repo from './repositories'
@@ -46,6 +47,7 @@ function App() {
       {bookList.map( book =>
         <div key={book.id}>
           <BookDetail {...book}/>
+          <BookForm book={book} categoryList={categoryList}/>
           <hr />
         </div>
       )}
