@@ -16,15 +16,22 @@ function BookForm(props: Props) {
 
   const onSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault()
-    props.callbackFn({
-      id: props.book.id,
-      title: titleRef.current?.value,
-      price: Number(priceRef.current?.value),
-      stockAmount: Number(stockAmountRef.current?.value),
-      category: {
-        id: Number(categoryRef.current?.value)
-      }
-    })
+    
+    const title = titleRef.current?.value
+    if (title && title.length > 5) {
+      props.callbackFn({
+        id: props.book.id,
+        title: titleRef.current?.value,
+        price: Number(priceRef.current?.value),
+        stockAmount: Number(stockAmountRef.current?.value),
+        category: {
+          id: Number(categoryRef.current?.value)
+        }
+      })
+    }
+    else{
+      alert("The title must be longer than 5 characters")
+    }
   }
 
   return (

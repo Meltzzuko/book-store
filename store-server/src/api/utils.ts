@@ -1,8 +1,8 @@
 export const toLowerCamelCase = (input: string) : string => {
     return input[0].toLowerCase() + input.substring(1)
-}  
-
-export const nestObject = (original: any, propName: string) : any => {
+  }
+  
+  export const nestObject = (original: any, propName: string) : any => {
     const result: {[propName:string]: any} = {}
     for(const [k, v] of Object.entries(original)){
       if(k.startsWith(propName)){    
@@ -16,9 +16,10 @@ export const nestObject = (original: any, propName: string) : any => {
       }
     }
     return result
-}  
-
-export const flattenId = (original: any, propName: string) : any => {
+  }
+  
+  
+  export const flattenId = (original: any, propName: string) : any => {
     const result = {...original}
     const nested = result[propName]
     delete result[propName]
@@ -26,4 +27,4 @@ export const flattenId = (original: any, propName: string) : any => {
       result[`${propName}Id`] = nested.id
     }
     return result
-}
+  }
