@@ -38,8 +38,6 @@ function App() {
     fetchBookList()
   }
 
-
-
   useEffect(() => {
     fetchCategoryList()
     fetchBookList()
